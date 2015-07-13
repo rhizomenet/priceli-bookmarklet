@@ -7,4 +7,4 @@ The bookmarklet is a Content Glass application and therefore use Content Glass a
 For more information about Content Glass API please visit:<br>
 http://developers.contentglass.com.<br>
 For more information about priceli API please visit:<br>
-developers.priceli.co.il<br>
+http://developers.priceli.co.il<br>
