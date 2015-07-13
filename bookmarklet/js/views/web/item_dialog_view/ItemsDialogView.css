@@ -1,0 +1,51 @@
+
+.item_dialog_close_btn{
+    margin-top: 5px !important;
+    margin-right: 5px !important;
+    float: right !important;
+    height: 1.5em !important;
+    width: 1.5em !important;
+}
+
+.item_dialog_close_btn span{
+    left: 1px !important;
+    top: 2px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.cg-ItemDialogView{
+    direction: rtl !important; /*For hebrew users and all other rtl languages*/
+}
+
+.cg-ItemDialogView table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.items-table thead{
+    font-weight: bold;
+    border-bottom: 1px solid;
+
+}
+
+.cg-ItemDialogView table tbody tr td{
+    width: 70px;
+    border-bottom: 1px solid lightgray;
+}
+
+.cg-ItemDialogView table tbody tr td:last-child{
+    width: initial;
+}
+
+.cg-ItemDialogView table tbody tr td:first-child{
+    width: 135px;
+}
+
+.store-name{
+    font-weight: bold;
+}
+
+.items-dialog-item-name{
+    font-weight: bold;
+}
