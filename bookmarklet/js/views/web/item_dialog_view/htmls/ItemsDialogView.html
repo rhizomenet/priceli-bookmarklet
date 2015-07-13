@@ -1,0 +1,42 @@
+<script scriptletType="element" emType="label" emClass="items-dialog-item-name"> return context.item_name</script>
+<table id="items-table-{context.id}" class="items-table">
+    <thead>
+    <td>
+        <script scriptletType="element" emType="label"> return cg.BookmarkletLang.ItemStoreHeader</script>
+    </td>
+    <td>
+        <script scriptletType="element" emType="label"> return cg.BookmarkletLang.ItemPriceHeader</script>
+    </td>
+    <td>
+        <script scriptletType="element" emType="label"> return cg.BookmarkletLang.ItemBranchHeader</script>
+    </td>
+    </thead>
+    <tbody id="items-table-body-{context.id}">
+    </tbody>
+</table>
+<script>
+    (function populateTable(context){
+        var table = $("#items-table-" + context.id);
+        var items = context.items;
+        var tbody = $("#items-table-body-" + context.id);
+        for (var i = 0 ; i < items.length ; i++){
+            var item = items[i];
+            var storeId = item.chain_id;
+            var store_name = item.chain_name;
+            var storeLabel = $("#store-" + storeId);
+            if (storeLabel.length === 0){
+                var label = $(document.createElement('label'));
+                label.text(store_name);
+                label.attr("id", "store-" + storeId);
+                label.addClass("store-name");
+                tbody.append(label);
+                storeLabel = label;
+            }
+            var tr = $(document.createElement('tr'));
+            var template = new cg.HTMLTemplate(cg.PRICELI_HOST + "/bookmarklet/js/views/web/item_dialog_view/htmls/TableItem.html",
+                    tr[0] , item, null, false);
+            storeLabel.after(tr);
+            template.render();
+        }
+    })
+</script>
